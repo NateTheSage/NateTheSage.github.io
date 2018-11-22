@@ -16,5 +16,3 @@ this site that helps you.
 	* Powershell is a task automation and configuration management framework that is both a command line shell and scripting language available initially for Windows, then as an open-source cross-platform component. Powershell's ubiquity and ease of learning and use in large deployment environments make it an ideal system to learn. Powershell takes a lot after Linux in that it has a very extensive help system not unlike manpages, making learning this powerful framework easy.
 * PowerBI
 	* PowerBI is a business analytics service created by Microsoft as a sort of Tableau for Microsoft products and services. edX's PowerBI training will allow one to become proficient with basic data-warehousing capabilities as well as data prep, data discovery, and customizable dashboards for interaction with large amounts of data in an easy-to-view format.
-	
-More to come!
