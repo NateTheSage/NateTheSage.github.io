@@ -1,3 +1,22 @@
 name: Nate The Sage's Seemingly Wise Ramblings
-theme: jekyll-theme-hacker
+#theme: jekyll-theme-hacker
 permalink: /blog/:year/:month/:day/:title
+title:             Seemingly Wise Ramblings
+email:             nathan.parker.williams001@gmail.com
+description:       A place for me to tell the world about what I know.
+author:            Nathan Parker Williams
+#baseurl:           "/startbootstrap-clean-blog-jekyll"
+url:               "https://natethesage.github.io"
+
+# Social Profiles
+#twitter_username:  SBootstrap
+github_username:   NateTheSage
+#facebook_username: StartBootstrap
+
+# Build settings
+markdown:          kramdown
+paginate:          5
+paginate_path:     "/posts/page:num/"
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
