@@ -1,2 +1,5 @@
-_site/
-index.md
+_site
+node_modules
+Gemfile.lock
+.sass-cache
+*.gem
