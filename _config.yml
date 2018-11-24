@@ -3,7 +3,7 @@ email:             nathan.parker.williams001@gmail.com
 description:       This random information could fall into the right hands.
 author:            Nathan Parker Williams
 url:               "http://natethesage.github.io"
-permalink:         /blogs/:year/:month/:day/:title 
+#permalink:         /blogs/:year/:month/:day/:title 
 
 # Social Profiles
 github_username:   NateTheSage
