@@ -3,6 +3,7 @@ email:             nathan.parker.williams001@gmail.com
 description:       The ramblings and adventures of a young nerdy guy.
 author:            Nathan Parker Williams
 url:               "http://natethesage.github.io"
+permalink:         /blogs/:year/:month/:day/:title 
 
 # Social Profiles
 github_username:   NateTheSage
