@@ -6,7 +6,7 @@ background: '/img/82inches.jpg'
 ---
 ## Who am I?
 
-My name is Nathan Parker Williams. I'm a simple man from Altoona, Iowa, whom has had a very interesting walk of life. I grew up in a time and place where parents would sit outside and watch the kids play, a time where knowing thy neighbor was easy and life was good. 
+My name is Nathan Parker Williams. I'm a simple guy from Altoona, Iowa, whom has had a very interesting walk of life. I grew up in a time and place where parents would sit outside and watch the kids play, a time where knowing thy neighbor was easy and life was good. 
 
 Of course, that wouldn't make for an interesting story, would it?
 
