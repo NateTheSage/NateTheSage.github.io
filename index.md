@@ -12,6 +12,8 @@ this site that helps you.
 
 # Skill Descriptions
 
+(Note: This is for a class, disregard this.)
+
 * AWS
 	* AWS, or Amazon Web Services, is the IaaS service provided by Amazon that lets companies host content in the cloud with readily available access all over the world. The goal of the AWS Cloud Practitioner certification is to certify that an administrator is proficient in both configuration and deployment of AWS products and services according to the environments in which they are suited.
 * GitHub
