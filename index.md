@@ -1,6 +1,6 @@
 ---
 layout: home
-background: '/img/rinzler.jpg'
+background: '/img/jupiter.jpg'
 ---
 # Welcome to the blog of NateTheSage!
 
