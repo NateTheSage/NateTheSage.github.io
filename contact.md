@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Contact Me
-description: Have questions? I have answers.
-background: '/img/bg-contact.jpg'
+description: Offering all manner of informations and curiousities.
+background: '/img/kiara.jpg'
 form: true
 ---
 
@@ -11,28 +11,28 @@ form: true
   <div class="control-group">
     <div class="form-group floating-label-form-group controls">
       <label>Name</label>
-      <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
+      <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Name">
       <p class="help-block text-danger"></p>
     </div>
   </div>
   <div class="control-group">
     <div class="form-group floating-label-form-group controls">
       <label>Email Address</label>
-      <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
+      <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="E-mail">
       <p class="help-block text-danger"></p>
     </div>
   </div>
   <div class="control-group">
     <div class="form-group col-xs-12 floating-label-form-group controls">
       <label>Phone Number</label>
-      <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
+      <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Phone Number (Enter N/A if you don't want to provide.)">
       <p class="help-block text-danger"></p>
     </div>
   </div>
   <div class="control-group">
     <div class="form-group floating-label-form-group controls">
       <label>Message</label>
-      <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
+      <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="What did you want to say?"></textarea>
       <p class="help-block text-danger"></p>
     </div>
   </div>
