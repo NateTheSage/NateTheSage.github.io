@@ -65,3 +65,13 @@ Our training was provided via the Microsoft Virtual Academy, but honestly, I can
 The content is also quite dated, as I believe some of the features being used are reminiscent of Powershell 3.0, with Powershell currently in its 6th iteration. Either some fresh online content, or a good PDF eBook would be better, as Microsoft's content just jumps right into the DSC without any warning or explanation, at least I feel.
 
 [PowerShell Certificate](/docs/Certificate.pdf)
+
+## Linux
+
+Linux is a beautiful and wonderful beast. Linux is a massive family of mostly free and open source software OSes built around the kernel of the same name. The first true brain child of Linus Torvalds, the kernel was first relased on September 17, 1991, and has since evolved into the largest general purpose OS base on the planet. It is run on servers and major big iron systems, and is the operating system of choice for every major supercalculator on the planet.
+
+The system is very heavily based off of UNIX, and was solely created due to GNU's Hurd kernel, or the more advanced UNIX derivatives of 386BSD, not being available in 1991. Originally this was called Freax, but Linux became the primary name on the FTP server it was stored under, to associate it with Torvalds.
+
+My Linux experience is pretty substantial, from running the basic services to operating a virtualization environment that focuses largely on Debian-based images, with the occasional Ubuntu image somewhere due to a specific circumstance. I enjoy Debian to the point of having a VM that is dedicated to being a golden master staging VM.
+
+I've got multiple Debian VMs running everything from a streaming server for my smart TV and my BD player, to a non-facing email server that I have actually confirmed works.
