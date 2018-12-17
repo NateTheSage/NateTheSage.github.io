@@ -82,7 +82,7 @@ So, now I'll describe some of the device on the network. Keep in mind that I adm
 			
 			The most cool tweak I made to it is managing to install a super cheap SSD with a PCI mount in the rear, connected to the board via SATA (you know, the ones they say are meant for tape drives but magically work with any other drive), and a single Molex power connection clear from the front of the case to the back.
 			
-			[put a picture in here]
+			![Here's the hack.](/img/posts/01_rinzlerhack.jpg)
 			
 			This one has it's own story too! I'll detail it in another post.
 			
