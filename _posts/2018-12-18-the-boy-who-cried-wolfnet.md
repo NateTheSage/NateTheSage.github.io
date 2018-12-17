@@ -10,7 +10,7 @@ background: '/img/postheads/01.png'
 
 So, what I first want to talk about is the network. The one thing that I'm proud of that has grown from a little router with two PCs on it, to a rather large internal network that hosts a type 2 hypervisor, a packet filtering platform, and a host of research, work, and in one instance gaming, PCs and peripherals.
 
-[/img/posts/01_wolfnet.png]
+![The WolfNet Structure](/img/posts/01_wolfnet.png)
 
 So...to give some color, this entire network is a private network behind a private network. (Inceptive, no?) Essentially, the University of Tulsa took the smart (read: slightly inconveniencing) step of converting the entirety of their networks to private IP address schemes. Originally, the university handed out public IPs to every single computer that connected to it, mostly due to the university maintaining possession of nearly all of a class B space.
 
