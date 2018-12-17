@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "The Boy Who Cried WolfNet"
-subtitle: "Now that I've got you're attention..."
+subtitle: "Now that I've got your attention..."
+author: Nathan Parker Williams
 date: 2018-12-18 11:45:00
 background: '/img/postheads/01.png'
 ---
