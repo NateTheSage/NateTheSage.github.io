@@ -2,7 +2,6 @@
 layout: home
 background: '/img/jupiter.jpg'
 ---
-# SWR
 
 I've started this blog to detail a few things about my (up and coming) knowledge of the IT and security world,
 and detail my own experiences with my own home network.
