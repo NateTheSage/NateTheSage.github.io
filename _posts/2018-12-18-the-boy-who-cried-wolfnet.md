@@ -119,3 +119,15 @@ So, now I'll describe some of the device on the network. Keep in mind that I adm
 			This one's another that is going to get its own post (probably a few!) detailing everything I've done with it.
 			
 That's it! Everything I've ever learned or done here has been put into this pride and joy of a network. I hoped you found this post interesting and informative. Stay tuned, I'll have some more detailed posts coming soon.
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Popup image</button>
+
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <img src="//placehold.it/1000x600" class="img-responsive">
+        </div>
+    </div>
+  </div>
+</div>
