@@ -315,8 +315,8 @@ We'll now configure Bitvise to have similar settings to OpenSSH. Click **Edit ad
 
 First things we're going to configure are in the Server settings. Click **Server**, and look at your right-hand window. The settings you'll need to configure to are listed here:
 
-	[x] Omit server version
-	[x] Omit relative directories in SFTP
+	- [x] Omit server version
+	- [x] Omit relative directories in SFTP
 	
 We want to hide our server version because this could indicate potential attacks an adversary could perform, and omitting relative directories is useful because it keeps us from trying to copy the entire parent directory when doing a file transfer, a real issue with some other SSH and SFTP clients.
 
@@ -330,47 +330,47 @@ Now we're getting to the more interesting stuff. **SSH Algorithms** are next.
 
 You should want your **key exchange** window to look like this:
 
-	[x] Curve25519
-	[ ] *all the ecdh-sha2 entries*
+	- [x] Curve25519
+	- [ ] *all the ecdh-sha2 entries*
 	DH Group Exchange: minimum size 4096
 	DH Group Exchange: maximum size 4096
-	[x] diffie-hellman-gex-sha256
-	[ ] diffie-hellman-gex-sha1
-	[ ] *all the diffie-hellman group 16, 15, 14, and 1 sizes*
+	- [x] diffie-hellman-gex-sha256
+	- [ ] diffie-hellman-gex-sha1
+	- [ ] *all the diffie-hellman group 16, 15, 14, and 1 sizes*
 	
 The next window, **signature**, should look like this:
 
-	[x] Ed25519
-	[ ] *all the ecdh-sha2 entries*
-	[x] rsa-sha2-512
-	[ ] rsa-sha2-256
-	[x] ssh-rsa
+	- [x] Ed25519
+	- [ ] *all the ecdh-sha2 entries*
+	- [x] rsa-sha2-512
+	- [ ] rsa-sha2-256
+	- [x] ssh-rsa
 	Minimum RSA key size (bits): 4096
-	[ ] ssh-dss
+	- [ ] ssh-dss
 	
 Your **encryption** window should look like this:
 
-	[x] aes256-gcm
-	[ ] aes128-gcm
-	[x] aes256-ctr
-	[ ] aes192-ctr
-	[ ] aes128-ctr
-	[ ] 3des-ctr
-	[ ] aes256-cbc
-	[ ] aes192-cbc
-	[ ] aes128-cbc
-	[ ] 3des-cbc
+	- [x] aes256-gcm
+	- [ ] aes128-gcm
+	- [x] aes256-ctr
+	- [ ] aes192-ctr
+	- [ ] aes128-ctr
+	- [ ] 3des-ctr
+	- [ ] aes256-cbc
+	- [ ] aes192-cbc
+	- [ ] aes128-cbc
+	- [ ] 3des-cbc
 	
 This next one's easy. **Data integrity protection** should look like this:
 
-	[x] hmac-sha2-256
-	[ ] hmac-sha1
+	- [x] hmac-sha2-256
+	- [ ] hmac-sha1
 	
 **(Optional)** If you'd like to configure compression (which I recommend), have it look like this:
 
-	[x] zlib
-	[x] none
-	[x] Delay compression
+	- [x] zlib
+	- [x] none
+	- [x] Delay compression
 	
 **TLS Algorithms** you can leave alone, since we're not running any FTPS.
 
