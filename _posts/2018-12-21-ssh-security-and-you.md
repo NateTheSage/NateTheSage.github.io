@@ -376,7 +376,7 @@ This next one's easy. **Data integrity protection** should look like this:
 
 **Session** has a few things we should look at.
 
-**(Optional)** The **Banner message file** gives you a capability to display a banner not unlike on OpenSSH. This is generally required for compliance, but can also be a fun way for you to know it's your server with a little ASCII art.
+**(Optional)** The **Banner message file** gives you a capability to display a banner not unlike on OpenSSH. This is generally required for compliance, but can also be a fun way for you to know it's your server with a little ASCII art. If you want to do a banner for an OpenSSH instance, I recommend [Figlet](http://www.figlet.org/), readily available from your package distro, or a number of ASCII art generators on the web for Windows, if your banner does not have to be compliance based.
 
 Since we're in here, we should **Limit total sessions** to **All** and change **Maximum total sessions** to **5**.
 
