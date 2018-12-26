@@ -1,0 +1,1 @@
+This license is a placeholder because most of this content is in the public domain at this point.
