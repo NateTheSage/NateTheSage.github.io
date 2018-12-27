@@ -95,7 +95,7 @@ So, now I'll describe some of the device on the network. Keep in mind that I adm
         </div>
 	  </a>
 </div>
-
+```
 			This one has it's own story too! I'll detail it in another post.
 			
 		4. seraphina.local.net
