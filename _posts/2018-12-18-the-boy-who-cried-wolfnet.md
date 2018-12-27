@@ -86,6 +86,7 @@ So, now I'll describe some of the device on the network. Keep in mind that I adm
 			Still, it's a pretty good server that I plan on using as a more versatile VM host, for specialized functions that ideally would require a physical hard drive connected to the VM.
 			
 			The most cool tweak I made to it is managing to install a super cheap SSD with a PCI mount in the rear, connected to the board via SATA (you know, the ones they say are meant for tape drives but magically work with any other drive), and a single Molex power connection clear from the front of the case to the back.
+			
 <div class="thumbnail">
       <a href="/img/posts/01_rinzlerhack.jpg">
         <img src="/img/posts/01_rinzlerhack.jpg" alt="Rinzler's power hack." style="width:100%">
@@ -94,6 +95,7 @@ So, now I'll describe some of the device on the network. Keep in mind that I adm
         </div>
 	  </a>
 </div>
+
 			This one has it's own story too! I'll detail it in another post.
 			
 		4. seraphina.local.net
