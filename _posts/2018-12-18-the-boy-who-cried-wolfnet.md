@@ -9,9 +9,6 @@ background: '/img/postheads/01.png'
 # The First Real Post About The Network
 
 So, what I first want to talk about is the network. The one thing that I'm proud of that has grown from a little router with two PCs on it, to a rather large internal network that hosts a type 2 hypervisor, a packet filtering platform, and a host of research, work, and in one instance gaming, PCs and peripherals.
-
-[Here's a picture of the network.](/img/posts/01_wolfnet.png)
-
 <div class="thumbnail">
       <a href="/img/posts/01_wolfnet.png">
         <img src="/img/posts/01_wolfnet.png" alt="WolfNet Network Schematic" style="width:100%">
@@ -20,7 +17,6 @@ So, what I first want to talk about is the network. The one thing that I'm proud
         </div>
 </a>
 </div>
-
 So...to give some color, this entire network is a private network behind a private network. (Inceptive, no?) Essentially, the University of Tulsa took the smart (read: slightly inconveniencing) step of converting the entirety of their networks to private IP address schemes. Originally, the university handed out public IPs to every single computer that connected to it, mostly due to the university maintaining possession of nearly all of a class B space.
 
 This was EXCEPTIONALLY convenient for me, due to the fact that because everyone got a public IP, access inbound and outbound to the Internet was almost unfettered. I was able to host a lot of things via dynamic DNS (which, I know, is a bad thing) and was able to really begin to understand the importance of securing your border. Of course, this changed after a summer, and I came back to find I had no Internet connectivity. I threw a single switch inside my PFSense box configuration, and my Internet was back. Even though services would be harder.
@@ -90,9 +86,14 @@ So, now I'll describe some of the device on the network. Keep in mind that I adm
 			Still, it's a pretty good server that I plan on using as a more versatile VM host, for specialized functions that ideally would require a physical hard drive connected to the VM.
 			
 			The most cool tweak I made to it is managing to install a super cheap SSD with a PCI mount in the rear, connected to the board via SATA (you know, the ones they say are meant for tape drives but magically work with any other drive), and a single Molex power connection clear from the front of the case to the back.
-			
-			[Here's the hack.](/img/posts/01_rinzlerhack.jpg)
-			
+<div class="thumbnail">
+      <a href="/img/posts/01_rinzlerhack.jpg">
+        <img src="/img/posts/01_rinzlerhack.jpg" alt="Rinzler's power hack." style="width:100%">
+        <div class="caption">
+          <p>WolfNet as it appears at the time of this posting.</p>
+        </div>
+	  </a>
+</div>
 			This one has it's own story too! I'll detail it in another post.
 			
 		4. seraphina.local.net
