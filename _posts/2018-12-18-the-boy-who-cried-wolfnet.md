@@ -12,15 +12,13 @@ So, what I first want to talk about is the network. The one thing that I'm proud
 
 [Here's a picture of the network.](/img/posts/01_wolfnet.png)
 
-<div class="col-lg-12">
-    <div class="thumbnail">
+<div class="thumbnail">
       <a href="/img/posts/01_wolfnet.png">
         <img src="/img/posts/01_wolfnet.png" alt="WolfNet Network Schematic" style="width:100%">
         <div class="caption">
           <p>WolfNet as it appears at the time of this posting.</p>
         </div>
-      </a>
-</div>
+</a>
 
 So...to give some color, this entire network is a private network behind a private network. (Inceptive, no?) Essentially, the University of Tulsa took the smart (read: slightly inconveniencing) step of converting the entirety of their networks to private IP address schemes. Originally, the university handed out public IPs to every single computer that connected to it, mostly due to the university maintaining possession of nearly all of a class B space.
 
