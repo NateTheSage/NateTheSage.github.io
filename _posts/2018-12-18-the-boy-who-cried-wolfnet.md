@@ -12,6 +12,16 @@ So, what I first want to talk about is the network. The one thing that I'm proud
 
 [Here's a picture of the network.](/img/posts/01_wolfnet.png)
 
+<div class="col-lg-12">
+    <div class="thumbnail">
+      <a href="/img/posts/01_wolfnet.png">
+        <img src="/posts/01_wolfnet.png" alt="WolfNet Network Schematic" style="width:100%">
+        <div class="caption">
+          <p>WolfNet as it appears at the time of this posting.</p>
+        </div>
+      </a>
+</div>
+
 So...to give some color, this entire network is a private network behind a private network. (Inceptive, no?) Essentially, the University of Tulsa took the smart (read: slightly inconveniencing) step of converting the entirety of their networks to private IP address schemes. Originally, the university handed out public IPs to every single computer that connected to it, mostly due to the university maintaining possession of nearly all of a class B space.
 
 This was EXCEPTIONALLY convenient for me, due to the fact that because everyone got a public IP, access inbound and outbound to the Internet was almost unfettered. I was able to host a lot of things via dynamic DNS (which, I know, is a bad thing) and was able to really begin to understand the importance of securing your border. Of course, this changed after a summer, and I came back to find I had no Internet connectivity. I threw a single switch inside my PFSense box configuration, and my Internet was back. Even though services would be harder.
