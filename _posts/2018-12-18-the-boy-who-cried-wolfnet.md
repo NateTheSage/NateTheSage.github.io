@@ -89,7 +89,7 @@ So, now I'll describe some of the device on the network. Keep in mind that I adm
 			
 <div class="thumbnail">
       <a href="/img/posts/01_rinzlerhack.jpg">
-        <img src="/img/posts/01_rinzlerhack.jpg" alt="Rinzler's power hack." style="width:100%">
+        <img src="/img/posts/01_rinzlerhack.jpg" alt="Rinzler power hack." style="width:100%">
         <div class="caption">
           <p>WolfNet as it appears at the time of this posting.</p>
         </div>
