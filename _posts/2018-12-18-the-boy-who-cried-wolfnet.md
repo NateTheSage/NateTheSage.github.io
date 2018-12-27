@@ -15,7 +15,7 @@ So, what I first want to talk about is the network. The one thing that I'm proud
 <div class="col-lg-12">
     <div class="thumbnail">
       <a href="/img/posts/01_wolfnet.png">
-        <img src="/posts/01_wolfnet.png" alt="WolfNet Network Schematic" style="width:100%">
+        <img src="/img/posts/01_wolfnet.png" alt="WolfNet Network Schematic" style="width:100%">
         <div class="caption">
           <p>WolfNet as it appears at the time of this posting.</p>
         </div>
