@@ -87,15 +87,15 @@ So, now I'll describe some of the device on the network. Keep in mind that I adm
 			
 			The most cool tweak I made to it is managing to install a super cheap SSD with a PCI mount in the rear, connected to the board via SATA (you know, the ones they say are meant for tape drives but magically work with any other drive), and a single Molex power connection clear from the front of the case to the back.
 			
-<div class="thumbnail">
-      <a href="/img/posts/01_rinzlerhack.jpg">
-        <img src="/img/posts/01_rinzlerhack.jpg" alt="Rinzler power hack." style="width:100%">
-        <div class="caption">
-          <p>WolfNet as it appears at the time of this posting.</p>
-        </div>
-	  </a>
-</div>
-```
+			<div class="thumbnail">
+				<a href="/img/posts/01_rinzlerhack.jpg">
+					<img src="/img/posts/01_rinzlerhack.jpg" alt="Rinzler power hack." style="width:100%">
+					<div class="caption">
+						<p>WolfNet as it appears at the time of this posting.</p>
+					</div>
+				</a>
+			</div>
+
 			This one has it's own story too! I'll detail it in another post.
 			
 		4. seraphina.local.net
