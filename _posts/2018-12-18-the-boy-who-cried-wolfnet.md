@@ -91,7 +91,7 @@ So, now I'll describe some of the device on the network. Keep in mind that I adm
 				<a href="/img/posts/01_rinzlerhack.jpg">
 					<img src="/img/posts/01_rinzlerhack.jpg" alt="Rinzler power hack." style="width:100%">
 					<div class="caption">
-						<p>WolfNet as it appears at the time of this posting.</p>
+						<p>Rinzler's power cable hack. Crazy, isn't it? :)</p>
 					</div>
 				</a>
 			</div>
