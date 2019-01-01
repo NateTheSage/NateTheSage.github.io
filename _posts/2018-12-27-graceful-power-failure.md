@@ -20,7 +20,7 @@ And then I realized: Not only can that VM run the NUT server on the passed-throu
 
 The best part about this thing is that it actually worked pretty well. However, I had some goals that I wanted to achieve:
 
-	* The VMs must start immediately going down on power failure. Clean shutdowns everywhere.
-	* The ESXi host MUST go down last, because it will, in a great twist of irony, bring down the NUT server with it.
-	* The host must be completely off once the power ultimately runs out on the UPS.
-	* There will be no cancellation of the shutdown timers because the power frequently comes in and out. Better to just leave it off.
+	1. The VMs must start immediately going down on power failure. Clean shutdowns everywhere.
+	2. The ESXi host MUST go down last, because it will, in a great twist of irony, bring down the NUT server with it.
+	3. The host must be completely off once the power ultimately runs out on the UPS.
+	4. There will be no cancellation of the shutdown timers because the power frequently comes in and out. Better to just leave it off.
