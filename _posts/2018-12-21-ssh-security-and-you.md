@@ -140,7 +140,7 @@ You'll see a bunch of stuff fly by, this is normal. If you're in a GUI, you'll p
 	4. No - short time window. Keeps tokens good for 30 seconds to account for clock skew.
 	5. Yes - rate limiting for authentication attempts. No more than 3 every 30 seconds.
 	
-Alright, it's configured. Now, if you want, you can take the .google-authenticator file and use it on other systems.
+Alright, it's configured. Now, if you want, you can take the ```.google-authenticator``` file and use it on other systems.
 
 Now, we have to configure our sshd's PAM sources.
 
