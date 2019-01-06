@@ -20,10 +20,10 @@ And then I realized: Not only can that VM run the NUT server on the passed-throu
 
 The best part about this thing is that it actually worked pretty well. However, I had some goals that I wanted to achieve:
 
-	1. The VMs must start immediately going down on power failure. Clean shutdowns everywhere.
-	2. The ESXi host MUST go down last, because it will, in a great twist of irony, bring down the NUT server with it.
-	3. The host must be completely off once the power ultimately runs out on the UPS.
-	4. There will be no cancellation of the shutdown timers because the power frequently comes in and out. Better to just leave it off.
+1. The VMs must start immediately going down on power failure. Clean shutdowns everywhere.
+2. The ESXi host MUST go down last, because it will, in a great twist of irony, bring down the NUT server with it.
+3. The host must be completely off once the power ultimately runs out on the UPS.
+4. There will be no cancellation of the shutdown timers because the power frequently comes in and out. Better to just leave it off.
 	
 So...here's what you'll need, starting from scratch:
 
@@ -37,3 +37,5 @@ So, after having deployed your VM, we start with the following.
 
 1. In your VM settings, you need to ensure you have allocated a **USB controller with at least 2.0 capability**.
 2. Once you've verified that, add a **new USB device**. Pending any other USB devices, your UPS will be the first to show up.
+3. **Save your VM settings** and start the VM up. You should have already gotten it installed and configured how you like.
+4. We'll now install 
