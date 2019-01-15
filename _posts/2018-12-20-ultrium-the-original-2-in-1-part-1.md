@@ -54,11 +54,16 @@ Now that I have this thing in my hands...waiting for the parts was the hard part
 
 [New hard drive caddy and SSD](https://www.amazon.com/OEM-Original-Authentic-Panasonic-Toughbook/dp/B01K8H69PY/ref=sr_1_3?ie=UTF8&qid=1547580759&sr=8-3&keywords=panasonic+cf-19+hard+drive+caddy)
 
-	* New reserve battery
-	* New power brick and cable
-	* A compatible digitizer for the CF-19's screen
-	* A USB 3.0 ExpressCard
-	* A USB 2.0 PCMCIA card
-	* RAM upgrade from the original 4GB to 8GB
+New reserve battery
+
+New power brick and cable
+
+A compatible digitizer for the CF-19's screen
+
+A USB 3.0 ExpressCard
+
+A USB 2.0 PCMCIA card
+
+RAM upgrade from the original 4GB to 8GB
 
 
