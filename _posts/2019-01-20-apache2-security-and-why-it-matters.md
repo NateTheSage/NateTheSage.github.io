@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Apache2, and Needlessly Strong Security"
+title: "Apache2 Security, and Why It Matters"
 subtitle: "The more-in-one security configuration."
 date: 2019-01-20 15:15:00
 background: '/img/postheads/apache.jpg'
