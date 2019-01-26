@@ -1,4 +1,8 @@
-# CIS 4076/6076 - Technical Skills Writeup
+---
+layout: post
+title: "CIS 4076/6076 - Technical Skills Writeup"
+background: '/img/rick.jpg'
+---
 
 ## Skill Descriptions
 
