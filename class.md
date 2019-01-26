@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "CIS 4076/6076 - Technical Skills Writeup"
+date: "01-01-1969 4:59:59"
 background: '/img/rick.jpg'
 ---
 
