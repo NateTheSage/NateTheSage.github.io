@@ -10,7 +10,7 @@ background: '/img/postheads/apache.jpg'
 
 Apache is undoubtedly the most popular web server software in use today, popular since April of 1996. Today, it serves most of the top million of websites, and has a massive amount of features that enable it to be anything from a web server to a proxy server and even a DAV server.
 
-Today, though, the need for interoperability is becoming slowly suceeded by the need for security. Especially for those of us that are not fifteen-man teams that are paid to do this.
+Today, though, the need for interoperability is becoming slowly succeeded by the need for security. Especially for those of us that are not fifteen-man teams that are paid to do this.
 
 What I've had to do is pour through the (absolutely massive) amount of tutorials on the Internet that all go over the same 20 or 25 steps that annoy the crap out of me. If there's any one thing I hate, it's repeated advice that never changes despite the fact the subject of the advice DOES change. But to find that one interesting tidbit of advice that you never thought of...that's what I look for.
 
@@ -31,79 +31,109 @@ What I'll be doing here is listing out each option and the security implication 
 ## /etc/apache2/apache2.conf
 
 \#\#\#\#
+
 \#
+
 \# BEGIN APACHE2 CONFIGURATION
+
 \# HOST: <host>
+
 \#
+
 \#\#\#\#
+
 Nothing like a little bit of text file flair, right?
 
 \#\#\#
+
 \#
+
 \# STANDARD OPTIONS
+
 \#
+
 \#\#\#
+
 Some more flair, for the most part.
 
 ```Mutex file:${APACHE_LOCK_DIR} default```
+
 Standard configuration for Debian-based Apache.
 
 ```PidFile ${APACHE_PID_FILE}```
+
 Standard configuration for Debian-based Apache.
 
 ```ServerTokens Prod```
+
 The logic behind this is that, whenever your server sends a response, it also embeds a lot of additional information like your version, which can potentially give away your operating system.
 
 ##### Security Implication
+
 For example, full on a Ubuntu server might look like ```Apache/2.2.8 (Ubuntu) mod_python/3.3.1 Python/2.5.2 PHP/5.2.4-2ubuntu5.7 with Suhosin-Patch mod_ssl/2.2.8 OpenSSL/0.9.8g```. That's...way too much information to be giving out passively. Setting this to Prod (or ProductionOnly if you're on a RHEL/Fedora/CentOS based system) causes the server to only output ```Server: Apache```, which is much better.
 
 ```ServerSignature Off```
-This is that message you get at the bottom of an autoindex'd directory that tells you all about the server that generated the autoindex. 
+
+This is that message you get at the bottom of an autoindex'd directory that tells you all about the server that generated the autoindex.
 
 ##### Security Implication
+
 This is a little too much information, and by setting this to ```Off```, we hide that information from any autoindex'd directories.
 
 ```FileETag None```
+
 These turn off the server generating unique tags for every file that help a browser's cache update files if they are newer or missing.
 
 ##### Security Implication
+
 The problem with these unique tags is just that: They're unique enough to be tied to a particular site. In fact, they're unique to a specific server. Particularly for virtualized or load-balanced sites, one page recieved from one server will not match the tag of the *same* page from a *different* server. So...by disabling that test, we require browsers to always load content as delivered from the site, and we keep the server from being easily identified.
 
 ```TraceEnable off```
+
 Disables the TRACE command on Apache2.
 
 ##### Security Implication
+
 So, this is basically a really screwed up attempt at making things easier that ends up making nothing easier and poking a huge hole in a secure site configuration. What TRACE does is that it allows you to make a sort of ping request to a server supporting, allowing you to see what is being sent and recieved between the server. By leaving TRACE on, you leave a hole in your server such that enterprising individuals (a.k.a. me and the other guys parusing the Internet casually) can use it to perform some cross-site stuff.
 
 (There's a FABULOUS [whitepaper on TRACE](https://www.cgisecurity.com/whitehat-mirror/WH-WhitePaper_XST_ebook.pdf) that explains why this is a really, REALLY bad thing to have on.)
 
 ```Timeout 300```
+
 Standard configuration for Debian-based Apache.
 
 ```KeepAlive On```
+
 Standard configuration for Debian-based Apache.
 
 ```MaxKeepAliveRequests 100```
+
 Standard configuration for Debian-based Apache.
 
 ```RedirectMatch 404 "^.*\/\.(?!well-known).*$"```
+
 This keeps the server from serving any extra files that may be things like .git files or .htaccess files, pretty much anything with a dot in front of it that would be considered by many Linux-based operating systems to be "hidden". Obviously we don't wanna be serving this stuff, so let's just not.
 
 ```KeepAliveTimeout 5```
+
 Standard configuration for Debian-based Apache.
 
 ```\# These need to be set in /etc/apache2/envvars
 User ${APACHE_RUN_USER}
 Group ${APACHE_RUN_GROUP}```
+
 Standard configuration for Debian-based Apache.
 
 ```HostnameLookups Off```
+
 This keeps Apache from doing IP-to-FQDN lookups, which can be piecemeal operations that add up quickly. Plus, most modern servers have WHOIS on them, or you can easily browse to an Internet registry and check.
 
 ```ErrorLog ${APACHE_LOG_DIR}/error.log```
+
 Standard configuration for Debian-based Apache.
 
 ```LogLevel warn```
+
 Standard configuration for Debian-based Apache. You shouldn't really need to do anything fancy with this unless you've got serious issues.
 
 ```
@@ -142,20 +172,20 @@ The idea is that you need to be in control of what methods you support, which by
 
 You'll also note here that we have disabled Indexes and Includes on /srv/. I host multiple webroots on some servers out of the /srv/ directory because typically it is an encrypted partition on my servers that I have to unlock at boot with a key and a password.
 
-##### Security Implication
 The last thing we need is a web root that is in production having a directory without an index that lets us see the file system, and for a server that is running Includes to be including things that might make our security footing weaker. We can override this with .htaccess files if we need, so it's good to have it globally off and set it on a per-directory or per-file basis.
 
 ```
 RewriteEngine On
-RewriteCond %{THE_REQUEST} !HTTP/1\.1$ 
+RewriteCond %{THE_REQUEST} !HTTP/1\.1$
 RewriteRule .* - [F]
 ```
 These lines actually require all requests made to my servers to be in HTTP/1.1.
 
 ##### Security Implication
-The reason for this is because not only is HTTP/1.0 deprececated, there's a major flaw in it with [session hijacking](https://en.wikipedia.org/wiki/Session_hijacking#History_of_HTTP).
+The reason for this is because not only is HTTP/1.0 deprecated, there's a major flaw in it with [session hijacking](https://en.wikipedia.org/wiki/Session_hijacking#History_of_HTTP).
 
 ```AccessFileName .htaccess```
+
 Standard configuration for Debian-based Apache.
 
 ```
@@ -209,20 +239,31 @@ CustomLog logs/deflate_log DEFLATE
 So, this isn't really a security thing, but a very useful and powerful performance boost, and I thought I would include it here. Basically...what happens is when your webserver uses gzip encoding, you get like a 4-to-1 compression of HTML and such to reduce the costs (and bandwidth!) of serving you files.
 
 \#\#\#
+
 \#
+
 \# END STANDARD OPTIONS
+
 \#
+
 \#\#\#
+
 I swear, half my text files are flair.
 
 \#\#\#
+
 \#
+
 \# SSL OPTIONS
+
 \#
+
 \#\#\#
+
 Flair!
 
 ```SSLPassPhraseDialog builtin```
+
 This is useful if you have a private key for your server that has a password on it. Sure, you can just remove the password from the key, but the goal is that you can use the key with the best security you can.
 
 ##### Security Implication
@@ -269,24 +310,28 @@ In a VM (which a lot of my servers are), we have very limited sources of entropy
 
 
 ```SSLCompression off```
+
 This turns off SSL compression.
 
 ##### Security Implication
 This is a big one. It prevents the [CRIME attack](https://en.wikipedia.org/wiki/CRIME).
 
 ```SSLHonorCipherOrder On```
+
 Enforces the clients that connect to conform to the server's cipherset.
 
 ##### Security Implication
 By enforcing server ciphersets rather than allowing the client to set the ciphers used, we prevent the client from potentially using an insecure cipherset that would open us up to eavesdropping, exploits, and other nastiness.
 
 ```SSLProtocol All -SSLv3 -TLSv1 -TLSv1.1 +TLSv1.2```
+
 This defines what protocols we want to use in our crypto.
 
 #### Security Implication
 There is no civilized reason we should be offering SSLv3. Get your apps upgraded, people. And because I don't have any need for compatibility, I turn off TLSv1 and TLSv1.1, so that we only use TLSv1.2 (for now, since TLSv1.3 is now a thing).
 
 ```SSLCipherSuite DHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:!aNULL:!eNULL:!LOW:!MEDIUM:!3DES:!MD5:!CAMELLIA:!EXP:!DSS:!PSK:!SEED:!ECDSA:!ADH:!IDEA:!DES```
+
 This is the meat and potatoes of your Apache crypto solution. Everything about what your TLS is matters here, ESPECIALLY if you're requiring clients to honor the server cipher order (which we are).
 
 #### Security Implication
@@ -295,44 +340,63 @@ The implications behind this cannot be overstated. None of what we've configured
 If you really want to get into the nitty-gritty of it, [the Wikipedia page on TLS has some very informative charts on the supported algorithms for TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security).
 
 ```SSLOptions +StrictRequire```
-This *forces* forbidden access when ```SSLRequireSSL``` or ```SSLRequire``` succesfully determine that access should be denied.
+
+This *forces* forbidden access when ```SSLRequireSSL``` or ```SSLRequire``` successfully determine that access should be denied.
 
 ##### Security Implication
 This prevents someone enterprising from trying to bypass the two directives mentioned above and will prevent access if either of these conditions are met. Usually you use this in like a .htaccess file.
 
 \#\#\#
+
 \#
+
 \# END SSL OPTIONS
+
 \#
+
 \#\#\#
+
 End flair.
 
 \#\#\#\#
+
 \#
+
 \# END APACHE2 CONFIGURATION
+
 \# HOST: <host>
+
 \#
+
 \#\#\#\#
+
 End flair!
 
 
 So that was the gist of my master Apache2 configuration. I'd hope you find some interesting stuff in there, I always liked to find a change and see why that change was.
 
-Next up, I'll detail my site-specific configurations that I use and reconfigure accordingly. I will make a note, I usually get rid of 000-default and default-ssl largely because they are unnessecary and because of my own configuration standards. If they're not used or needed, out they go.
+Next up, I'll detail my site-specific configurations that I use and reconfigure accordingly. I will make a note, I usually get rid of 000-default and default-ssl largely because they are unnecessary and because of my own configuration standards. If they're not used or needed, out they go.
 
 Note: I've not included the VirtualHost definitions for sake of obviousness.
 
 ## /etc/apache2/sites-available/https.conf
 
 \#\#\#
+
 \#
+
 \# HTTPS STANDARD CONFIGURATION
+
 \# HOST: <host>
+
 \#
+
 \#\#\#
+
 I guess I have a thing for document flair. Breaks up the monotony a little.
 
 ```DocumentRoot /srv/http/```
+
 Like I said, I usually have the ```/srv/``` directory on my VMs a encrypted partition that requires unlock at boot. I have different configuration files for if I have multiple sites, but when I have only one site, it usually resides in ```http/```. All my sites are accessed over HTTPS as well unless there's a genuine need for them to not be HTTPS. Plus, call me crazy, but I feel like this is way less typing when I'm going around in the filesystem.
 
 ```
@@ -340,8 +404,9 @@ ErrorLog /srv/https-error.log
 CustomLog /srv/https-access.log combined
 ```
 Having a different place for the logs to go allows for you to do some useful things. In this case, I'm putting the logs on my encrypted partition for safekeeping, and for ease of access for some of my tools.
-	
+
 ```DirectoryIndex index.php```
+
 Defining the DirectoryIndex allows you to have some control over what is expected to be the index.
 
 ##### Security Implication
@@ -378,63 +443,75 @@ We define these again in order to be doubly sure of our settings.
 
 
 ```Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"```
+
 We're getting to some header definitions now. This particular setting activates HTTP Strict Transport Security, which helps protect against protocol downgrade attacks and cookie hijacking.
 
 ##### Security Implication
 This means that a site demands that it only be interacted with over HTTPS and never via HTTP. Used in conjunction with a HTTP redirecting host, this allows for us to require all connections to be performed over HTTPS.
 
 ```Header always set X-Frame-Options "SAMEORIGIN,DENY"```
-This header setting does a variety of things. X-Frame-Options can be used to indicate a browser's behavior for opening pages in frames or iframes, prevening content that has been unintentionally (or intentionally) embedded into the page from being opened.
+
+This header setting does a variety of things. X-Frame-Options can be used to indicate a browser's behavior for opening pages in frames or iframes, preventing content that has been unintentionally (or intentionally) embedded into the page from being opened.
 
 ##### Security Implication
 Here, we're setting it such that a page will display if it is the same origin as the page itself (SAMEORIGIN), and prevent all other pages from being displayed in a frame or iframe (DENY). A third option is available as a sort of whitelist, ALLOW-FROM, which when supplied with a URI will allow a page to be displayed only from that origin.
 
 ```Header always set X-Content-Type-Options "nosniff"```
+
 This setting sends to the browser the demand that it not attempt to interpret files delivered using MIME-type sniffing.
 
 ##### Security Implication
 Content sniffing is used to compensate for a lack of metadata, basically. It helps a browser figure out what it will be rendering and shifts its resources accordingly. The problem with this is it creates an enormous exploit because a file can easily lie and say it's one thing, and the server delivers other content that enables exploitation of the client. We want to set it such that the client doesn't try to sniff so that way if we DO have something bad, the client can't get hit by this route.
 
 ```Header edit Set-Cookie ^(.*)$ $1;HttpOnly;Secure```
+
 This option controls how cookies are set and accessed by the browser.
 
 ##### Security Implication
-By setting Set-Cookie in this manner, we assure that all cookies are not accessible to client-side scripts (HttpOnly), and that they must be delievered over HTTPS (secure). If you have a cookie that has to be delivered over HTTP (because it has some arcane programming or something), you can whitelist that cookie by adding a ```Header edit Set-Cookie``` followed by the cookie's identification in proper definition.
+By setting Set-Cookie in this manner, we assure that all cookies are not accessible to client-side scripts (HttpOnly), and that they must be delivered over HTTPS (secure). If you have a cookie that has to be delivered over HTTP (because it has some arcane programming or something), you can whitelist that cookie by adding a ```Header edit Set-Cookie``` followed by the cookie's identification in proper definition.
 
 ```Header set X-XSS-Protection "1; mode=block"```
+
 This setting indicates to a browser to perform XSS protection, which will implement a series of XSS protections against some basic attacks.
 
 ##### Security Implication
 This one is a no-brainer. There are four values: disabled (0), enabled with sanitizing (1), enabled with rendering prevention (1; mode=block), and enabled with report (1;report=<reporturl>). I don't have a report facility, so we'll set it to enabled with render prevention.
 
 ```Header set Referrer-Policy: "same-origin"```
+
 This header controls our referrer policy.
 
 ###### Security Implication
 There's actually a variety of possible settings for this, but I picked 'same-origin' because it's going to be mostly me accessing these services.
 
 ```Header set Content-Security-Policy "default-src 'self'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self'; frame-ancestors 'self'"```
+
 This header sets our content security policy such that the things that the browser can run can only originate from the page they came from.
 
 ##### Security Implication
 By setting these the way they are, we can prevent some XSS, Clickjacking, and other code injection stuff that has been put into our trusted webpages. We trust the stuff we put on there, but who knows, the stuff that our stuff references could get jacked up.
 
 ```Header always unset X-Powered-By```
+
 Unsets the Powered By header.
 
 ##### Security Implication
 I have really NO idea why this header is even a thing. Basically what it does is it tell what the server is running. It can be easily manipulated too. But at the end of the day it's just extraneous information, so we can turn it off.
 
 ```SSLOpenSSLConfCmd DHParameters "/etc/apache2/ssl/dhparams.pem"```
+
 This directive is for where we put our dhparameters that we need for our cipherlist. Your DH parameters have no real reason to be below 4096 in today's age.
 
 ```SSLUseStapling on```
+
 I like to expicitly mention options again just in case I forgot something somewhere else. Like I said before, I just need the OCSP stapling facility and boom, I'm set up.
 
 ```SSLSessionTickets Off```
+
 Suprisingly I have a few issues with an app or two that is dated and SSLSessionTickets. I leave it in here in case I need to actually have it off, usually it's commented out.
 
 ```AllowEncodedSlashes NoDecode```
+
 Small help feature that keeps slashes from being decoded as being something other than what they are: slashes.
 
 ```		
@@ -446,11 +523,17 @@ SSLProxyCheckPeerName Off
 I use these four lines in case I have an application that, for one reason or another, forces me to use Apache as a proxy to it. Sometimes these apps run through Caddy or whatnot, so having the ability to just turn on SSL proxying helps a lot. Of course, I still have to define the ProxyPass and ProxyPassReverse, so it's just removing a single step.
 
 \#\#\#
+
 \#
+
 \# END STANDARD CONFIGURATION
+
 \# HOST: <host>
+
 \#
+
 \#\#\#
+
 And end flair.
 
 This next one should be pretty easy. It's just a HTTP site that 301's to the HTTPS site.
@@ -531,7 +614,7 @@ Include ports.conf
 </Directory>
 
 RewriteEngine On
-RewriteCond %{THE_REQUEST} !HTTP/1\.1$ 
+RewriteCond %{THE_REQUEST} !HTTP/1\.1$
 RewriteRule .* - [F]
 
 AccessFileName .htaccess
@@ -667,7 +750,7 @@ SSLUseStapling on
 SSLSessionTickets Off
 
 AllowEncodedSlashes NoDecode
-	
+
 SSLProxyEngine Off
 SSLProxyVerify None
 SSLProxyCheckPeerCN Off
