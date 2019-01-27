@@ -491,6 +491,8 @@ This header sets our content security policy such that the things that the brows
 ##### Security Implication
 By setting these the way they are, we can prevent some XSS, Clickjacking, and other code injection stuff that has been put into our trusted webpages. We trust the stuff we put on there, but who knows, the stuff that our stuff references could get jacked up.
 
+NOTE: This might jack up some big apps like Nextcloud, you'll need to tailor it to your needs.
+
 ```Header always unset X-Powered-By```
 
 Unsets the Powered By header.
