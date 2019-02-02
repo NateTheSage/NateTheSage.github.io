@@ -26,4 +26,12 @@ So, when you're doing your fresh installation, take a few notes here:
 
  [x] **Consider installing with no other features.** Like when tasksel offers if you wanna install a mailserver or an OpenSSH server. Don't bother with that stuff, we'll be overwriting their configurations later anyhow. You're building a specialized appliance here, let's keep the crap to a minimum.
  [x] **When performing partition setup, you will need a partition that is set up for crypto.** Our guide assumes that you will be setting up your encrypted partition to be mounted under ```/srv```. The idea behind this is that we are worried about our email being safe at rest, rather than while in use. This means that, where applicable, you'll need to set up a *partition for physical encryption* or whatever your distro calls a LUKS partition.
- [x] **
+ [x] **You may want to take a look at some of my other posts for other needed security configurations.** We're installing primarily an email solution, but we'd be remiss without having a method of remote access and a way to present our webmail. In particular, you might want to consult [my SSH post](https://natethesage.github.io/2018/12/21/ssh-security-and-you.html) and/or [my Apache2 post](https://natethesage.github.io/2019/01/20/apache2-security-and-why-it-matters.html).
+
+# Configuration Options
+
+So, now we're going to go into the three configuration options here. They range from straightforward to "thinking outside of the box by removing the box from the equation entirely". Like I detailed previously, here are the three options:
+
+* **The Public Edition**: You have a public IP address that is both static and tied to you.
+* **The Semi-Public Edition**: Your IP address is public, but it's dynamic, and your ISP is probably limiting the inbound and outbound ports we need for this.
+* **The Private Edition**: You're on a private address that may or may not change regularly, and port control is otherwise as strict as it can be since you're not able to be publicly routed to.
