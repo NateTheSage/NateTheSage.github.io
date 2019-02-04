@@ -27,8 +27,7 @@ If you want to be able to have your own local CA (your browsers will yell at you
  1. You'll need PHP5.6 to run PHPki, at least some of the older versions. PHP7.0 ***WILL*** break things with it. Your OpenSSL can be pretty modern though, as far as I understand.
 
  `sudo apt install php5 apache2 openssl && service apache2 stop`
-
-    1. Note: If you want to fix it, my understanding is you just have to change some functions. And they're all in my_functions and openssl_functions.
+ 
  2. Install Apache2 with a ***basic HTTP-configured site***. We're going to make it HTTPS later.
  3. Point Apache2 to your site root. For this tutorial, we will assume it's at ```/srv/http```.
  4.
