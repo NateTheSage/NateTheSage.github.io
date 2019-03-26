@@ -3,7 +3,7 @@ layout: post
 title: "Diana, Part Two: Starting From Scratch"
 subtitle: "Everyone starts somewhere."
 date: 2018-12-22 13:30:00
-background: '/img/postheads/03.png'
+background: '/img/postheads/diana.png'
 ---
 
 # Initial Setup
