@@ -133,13 +133,13 @@ The library will now prompt you for a lot of questions. We want to say yes to th
 
 	1. Yes - time-based authentication tokens. Codes will change randomly after a certain amount of time elapses rather than going through a sequence.
 
-You'll see a bunch of stuff fly by, this is normal. If you're in a GUI, you'll probably see a QR code printed onto your screen, if not, you may have to manually input the key. After that though, we'll be configuring the PAM's functionality.	
+You'll see a bunch of stuff fly by, this is normal. If you're in a GUI, you'll probably see a QR code printed onto your screen, if not, you may have to manually input the key. After that though, we'll be configuring the PAM's functionality.
 
 	2. Yes - update our google-authenticator files. If you say no, the program quits and nothing happens.
 	3. Yes - disallow multiple uses of the same token. Makes all codes expire after use.
 	4. No - short time window. Keeps tokens good for 30 seconds to account for clock skew.
 	5. Yes - rate limiting for authentication attempts. No more than 3 every 30 seconds.
-	
+
 Alright, it's configured. Now, if you want, you can take the ```.google-authenticator``` file and use it on other systems.
 
 Now, we have to configure our sshd's PAM sources.
@@ -319,7 +319,7 @@ First things we're going to configure are in the Server settings. Click **Server
 
 	[x] Omit server version
 	[x] Omit relative directories in SFTP
-	
+
 We want to hide our server version because this could indicate potential attacks an adversary could perform, and omitting relative directories is useful because it keeps us from trying to copy the entire parent directory when doing a file transfer, a real issue with some other SSH and SFTP clients.
 
 **(Optional)** Remove the IPv6 listening address :: in the **IPv6** Bindings window.
@@ -339,7 +339,7 @@ You should want your **key exchange** window to look like this:
 	[x] diffie-hellman-gex-sha256
 	[ ] diffie-hellman-gex-sha1
 	[ ] *all the diffie-hellman group 16, 15, 14, and 1 sizes*
-	
+
 The next window, **signature**, should look like this:
 
 	[x] Ed25519
@@ -349,7 +349,7 @@ The next window, **signature**, should look like this:
 	[x] ssh-rsa
 	Minimum RSA key size (bits): 4096
 	[ ] ssh-dss
-	
+
 Your **encryption** window should look like this:
 
 	[x] aes256-gcm
@@ -362,18 +362,18 @@ Your **encryption** window should look like this:
 	[ ] aes192-cbc
 	[ ] aes128-cbc
 	[ ] 3des-cbc
-	
+
 This next one's easy. **Data integrity protection** should look like this:
 
 	[x] hmac-sha2-256
 	[ ] hmac-sha1
-	
+
 **(Optional)** If you'd like to configure compression (which I recommend), have it look like this:
 
 	[x] zlib
 	[x] none
 	[x] Delay compression
-	
+
 **TLS Algorithms** you can leave alone, since we're not running any FTPS.
 
 **Session** has a few things we should look at.
