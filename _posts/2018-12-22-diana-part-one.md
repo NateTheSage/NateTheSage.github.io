@@ -69,9 +69,9 @@ I'll first have a post detailing what we do for the editions, that way you'll ha
 
 I'm a huge proponent of having "that one damn nice DigitalOcean-grade tutorial" somewhere on the Internet that lets you do a bunch of fun stuff in a short amount of time. So, for ours, here's what you'll need:
 
-	[x] **Linux experience.** You can do this on Unix, and I have done it, but Linux is generally a little easier to use. Even if you're no expert, I'll provide the commands so you can copypaste them into an SSH session for ease of use. Plus, I'm going to go to effort to make this as platform-homogenous as I can, and will point out where you'll need to do the legwork for your platform.
-	[x] **Time.** I like to be very dilligent with this work and will allocate a lot of time (and hang out with some friends in some MMOs or on Discord) while doing the work. Because I've got the resources, I will have an SSH session running, with a VMware Remote Console session ready if I really mess something up, since Jupiter, Diana's host metal, is sitting quite literally across from me.
-	[x] **Something reasonably powerful for such a task.** I usually provision a Debian 9 VM with about 2 GB of RAM and 32GB of storage space. However, because Jupiter's got a LOT of space available for small VMs and has 128GB of DDR2 FBDIMM SDRAM, I've got a lot to work with.
-	[x] **Patience.** I like to do this kind of stuff on a nice Friday evening with some homemade ramen, a non-alcoholic beer, and a terminal session. Your mileage may vary.
+[x] **Linux experience.** You can do this on Unix, and I have done it, but Linux is generally a little easier to use. Even if you're no expert, I'll provide the commands so you can copypaste them into an SSH session for ease of use. Plus, I'm going to go to effort to make this as platform-homogenous as I can, and will point out where you'll need to do the legwork for your platform.
+[x] **Time.** I like to be very dilligent with this work and will allocate a lot of time (and hang out with some friends in some MMOs or on Discord) while doing the work. Because I've got the resources, I will have an SSH session running, with a VMware Remote Console session ready if I really mess something up, since Jupiter, Diana's host metal, is sitting quite literally across from me.
+[x] **Something reasonably powerful for such a task.** I usually provision a Debian 9 VM with about 2 GB of RAM and 32GB of storage space. However, because Jupiter's got a LOT of space available for small VMs and has 128GB of DDR2 FBDIMM SDRAM, I've got a lot to work with.
+[x] **Patience.** I like to do this kind of stuff on a nice Friday evening with some homemade ramen, a non-alcoholic beer, and a terminal session. Your mileage may vary.
 
-	So...without any further ado, let's get our hands wet, shall we?
+So...without any further ado, let's get our hands wet, shall we?
