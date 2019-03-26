@@ -57,11 +57,11 @@ So...here we are. Introducing the ***Diana Email Project Trifecta!*** These thre
 
 Without further ado, here's our three projects! See which one is right for you!
 
-	**The Public Edition**: You have a public IP address that is both static and tied to you. You're probably paying extra in some way for it. Either way, you've got the ability to host your services without any extra effort.
+**The Public Edition**: You have a public IP address that is both static and tied to you. You're probably paying extra in some way for it. Either way, you've got the ability to host your services without any extra effort.
 	
-	**The Semi-Public Edition**: This one is the one that I actually used for most of my tenure while at the university, at least while they were handing out public IP addresses like they were candy. Your IP address is public, but it's dynamic, and your ISP is probably limiting the inbound and outbound ports we need for this. We'll also be taking advantage of dynamic DNS here, so keep that in mind. This one is a little bit more involved, requiring two external (but fairly trustworthy) services to help us get our email out there.
+**The Semi-Public Edition**: This one is the one that I actually used for most of my tenure while at the university, at least while they were handing out public IP addresses like they were candy. Your IP address is public, but it's dynamic, and your ISP is probably limiting the inbound and outbound ports we need for this. We'll also be taking advantage of dynamic DNS here, so keep that in mind. This one is a little bit more involved, requiring two external (but fairly trustworthy) services to help us get our email out there.
 	
-	**The Private Edition**: Probably the most encompassing of the three, this one is where you're fully behind a private network in which you have *zero* control of the border router that does in fact have the public IP address. You're on a private address (i.e. the 10, 172.16, or 192.168) that may or may not change regularly, and port control is otherwise as strict as it can be since you're not able to be publicly routed to. This one I operated on for a short time before I closed it all down as having been successful yet a lot of effort to maintain.
+**The Private Edition**: Probably the most encompassing of the three, this one is where you're fully behind a private network in which you have *zero* control of the border router that does in fact have the public IP address. You're on a private address (i.e. the 10, 172.16, or 192.168) that may or may not change regularly, and port control is otherwise as strict as it can be since you're not able to be publicly routed to. This one I operated on for a short time before I closed it all down as having been successful yet a lot of effort to maintain.
 
 I'll first have a post detailing what we do for the editions, that way you'll have all the configurations set up in advance and know they'll work.
 
