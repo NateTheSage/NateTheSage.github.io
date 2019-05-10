@@ -35,3 +35,5 @@ So, now we're going to go into the three configuration options here. They range 
 * **The Public Edition**: You have a public IP address that is both static and tied to you.
 * **The Semi-Public Edition**: Your IP address is public, but it's dynamic, and your ISP is probably limiting the inbound and outbound ports we need for this.
 * **The Private Edition**: You're on a private address that may or may not change regularly, and port control is otherwise as strict as it can be since you're not able to be publicly routed to.
+
+Some of this will be detailed by what your ISP is doing with a few certain ports. Here's the most important ports that we're going to be looking at.
