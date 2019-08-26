@@ -109,7 +109,7 @@ PubkeyAuthentication yes
 
 ### Optional: TOTP for SSH
 
-Borrowed from the EXCELLENT multi-platform tutorial [at Linux.com.](https://www.linux.com/blog/securing-ssh-two-factor-authentication-using-google-authenticator)
+~~Borrowed from the EXCELLENT multi-platform tutorial [at Linux.com.](https://www.linux.com/blog/securing-ssh-two-factor-authentication-using-google-authenticator)
 
 So for something kind of cool and additionally fun, we can add TOTP for SSH, giving us 2FA.
 
@@ -188,7 +188,9 @@ auth required pam_google_authenticator.so nullok
 
 Done! Now SSH will require password, publickey, and the keyboard-interactive token!
 
-If you're more interested in the TOTP, particularly the recovery, consult the DigitalOcean tutorial.
+If you're more interested in the TOTP, particularly the recovery, consult the DigitalOcean tutorial.~~
+
+This is no longer recommended due to something I discovered about Google Authenticator that involves them caching your tokencode. More on this in
 
 ## Authorized Users and Ciphers
 

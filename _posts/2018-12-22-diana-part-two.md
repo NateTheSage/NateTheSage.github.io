@@ -33,7 +33,15 @@ So, when you're doing your fresh installation, take a few notes here:
 So, now we're going to go into the three configuration options here. They range from straightforward to "thinking outside of the box by removing the box from the equation entirely". Like I detailed previously, here are the three options:
 
 * **The Public Edition**: You have a public IP address that is both static and tied to you.
-* **The Semi-Public Edition**: Your IP address is public, but it's dynamic, and your ISP is probably limiting the inbound and outbound ports we need for this.
+* **The Semi-Public Edition**: Your IP address is public, but it's "dynamic", and your ISP is probably limiting the inbound and outbound ports we need for this.
 * **The Private Edition**: You're on a private address that may or may not change regularly, and port control is otherwise as strict as it can be since you're not able to be publicly routed to.
 
 Some of this will be detailed by what your ISP is doing with a few certain ports. Here's the most important ports that we're going to be looking at.
+
+* **25/TCP** - *Simple Mail Transport Protocol* - This is probably the single most important one of all. Every single mail server on the Internet expects the destination for mail to be port 25 (with some cool and hackey exceptions). Most ISPs will block this port inbound if you're on a home network connection or a really cheap business connection.
+
+* **587/TCP** - *Simple Mail Transpot Protocol Submission* - This is the port that MOST (not all in this case) email clients use to actually submit email to the MTA (in this case Postfix). Exchange has its own thing that it does through MAPI. I haven't seen a case where this port is EXPLICITLY blocked inbound.
+
+* **143/TCP** - *Internet Message Access Protocol* - This is the port that actually enables your mailbox to manipulate mail, provided by Dovecot as the MDA. Very rarely does an ISP block this but as it and 587 are both below 1024, it's entirely possible they may do so.
+
+Now that we've covered all that, let's go to [the next one.](https://natethesage.github.io/2018/12/22/diana-part-three.html).
