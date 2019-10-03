@@ -2,7 +2,7 @@
 layout: post
 title: "OATH and Multi-factor Authentication"
 subtitle: "It's our token authentication post."
-date: 2019-7-17 13:30:00
+date: 2019-10-03 10:30:00
 background: '/img/postheads/2fa.jpg'
 ---
 
