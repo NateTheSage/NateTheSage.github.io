@@ -246,7 +246,7 @@ Scan it in, and you're done!
 
 ## Step 5: Try It!
 
-Now, log out. Here comes the hard part. When you log back in, you'll be prompted for your password, then you'll get a line that says:
+Now, log out. Here comes the hard part. When you log back in, you'll be prompted for your password, then you'll get a line saying:
 
 `One-time password (OTP) for <user>: `
 
@@ -254,10 +254,26 @@ Enter the six-digit code from your password vault, and you should be granted acc
 
 ![An example of the prompt when using sudo -i.](https://natethesage.github.io/img/posts/otp_10.png)
 
+## A Note About Windows
+
+So, for Windows, the procedure gets a little (read: markedly) more difficult. Most solutions require a substantial amount of cash to have on hand. The solution I came up with, though, works really well for what I need it.
+
+Enter [Rohos Logon Key](https://www.rohos.com/products/rohos-logon-key/). Some things I'd like to note are the paid-for version allows you to use OTP keys, whereas the free version allows you to use only a USB stick.
+
+If you do spring for the paid-for version, and happen to have an SSH server on your host already supporting OTP, say (Bitvise)[https://www.bitvise.com/ssh-server]...You can generate the token from Bitvise's admin interface, scan (or copy) it into the "Enter Secret Key" selected field in Rohos's setup, you can use the same token for SSH login for console login. Do note though, like most OTP tokens, Rohos only supports SHA1 hashed tokens, which is perfectly okay and normal. (I learned this the hard way.)
+
+However, for the caveat. It installs some DLLs that presumably have to interact with login (it allows you to capture your login screen and require an OTP code) into the SysWOW64 directory if you're on a 64-bit install. Take that how you will.
+
 ## Conclusion
 
-I hope that was quick and easy! I intend to be able to make a script for this to automate the process, but for now, this is a good exercise in learning about security while enhancing our own local security.
+I hope this was quick and easy! I intend to be able to make a script for this to automate the process, but for now, this is a good exercise in learning about security while enhancing our own local security.
 
 Thanks for reading, and I hope you learned something new!
 
 ###### Resources Used
+
+* [Manual for pam_oath](nongnu.org/oath-toolkit/pam_oath.html)
+* [Configuring OpenSSH with OATH and public keys (2 factor authentication)](insecure.ws/linux/openssh_oath.html)
+* [mod-authn-otp - UsersFile](https://code.google.com/archive/p/mod-authn-otp/wikis/UsersFile.wiki)
+* [pam_oath](wiki.archlinux.org/index.php/Pam_oath)
+* [Secure Your Linux Desktop and SSH Login Using Two Factor Google Authenticator](cyberciti.biz/open-source/howto-protect-linux-ssh-login-with-google-authenticator)
