@@ -87,7 +87,7 @@ It is crucial nobody else is able to read this file because it will contain our 
 
 Once you've created this file, edit it using your favorite editor. I'll use `nano`.
 
-`nano /etc/users.oath`
+`# nano /etc/users.oath`
 
 Once you've created it, we'll be copying things in like so. Having done my research, these are the fields I found libpam-oath to expect.
 
@@ -135,9 +135,11 @@ Now, most of these fields we will not need. The ones we're interested in are the
 
 To easily get our tokens into the file, do the following:
 
-`# cat rootsecret >> /etc/users.oath`
-`# cat usersecret >> /etc/users.oath`
-`# chmod 400 /etc/users.oath`
+```
+# cat rootsecret >> /etc/users.oath
+# cat usersecret >> /etc/users.oath
+# chmod 400 /etc/users.oath
+```
 
 ![Putting our tokens into the users.oath file.](https://natethesage.github.io/img/posts/otp_4.png)
 
@@ -145,7 +147,7 @@ To easily get our tokens into the file, do the following:
 
 Now, let's edit the file and add in the fields we'll need.
 
-`nano /etc/users.oath`
+`# nano /etc/users.oath`
 
 We'll add in these lines.
 
@@ -163,7 +165,7 @@ Step 1 is now complete!
 
 The next step involves telling the various PAM plugins we have an additional authentication subsystem we want to consult. In this case, we'll be heading into the pam.d directory, the home of all the PAM module configurations.
 
-`cd /etc/pam.d`
+`# cd /etc/pam.d`
 
 ![A typical pam.d directory's contents. I'm running GNOME as well as a few other things.](https://natethesage.github.io/img/posts/otp_6.png)
 
@@ -177,7 +179,7 @@ This is of course if you're on a headless console. On one with X or Wayland, you
 
 To edit more than one of them, format your edit command like this:
 
-`nano /etc/pam.d/{su,sudo,login}`
+`# nano /etc/pam.d/{su,sudo,login}`
 
 Now, if you're not familiar with how a PAM file is formatted, we'll go through it really quickly here.
 
@@ -217,8 +219,8 @@ Now we've gotten our secrets made, and our changes to the PAM modules done, it's
 Run oathtool like this so you can see if your token generates properly.
 
 ```
-oathtool -d6 -v \`cat usersecret\`
-oathtool -d6 -v \`cat rootsecret\`
+# oathtool -d6 -v \`cat usersecret\`
+# oathtool -d6 -v \`cat rootsecret\`
 ```
 ![Our example tokens have generated correctly!](https://natethesage.github.io/img/posts/otp_8.png)
 
@@ -234,7 +236,7 @@ If you need a vault, I recommend the following:
 We'll generate the QR codes here with the following command, now we know both our Base32 secrets.
 
 ```
-qrencode -o root.png 'otpauth://totp/<user>@<hostname>?secret=<thesecret>'
+# qrencode -o root.png 'otpauth://totp/<user>@<hostname>?secret=<thesecret>'
 ```
 
 Where <user> is your username, <hostname> is the hostname of the \*nix host, and <thesecret> is the Base32 secret. I haven't come up with a good way to get the Base32 secret out of oathtool yet, though, so you'll have to manually type it in.
@@ -244,8 +246,8 @@ Where <user> is your username, <hostname> is the hostname of the \*nix host, and
 Now, if you're on a proper console session (I'm in a window manager so my results will look different), you can use the following to see the QR code and scan it with Aegis (or your OTP vault of choice).
 
 ```
-fim root.png
-fim <user>.png
+# fim root.png
+# fim <user>.png
 ```
 
 Scan it in, and you're done!
