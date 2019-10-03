@@ -220,8 +220,8 @@ Now we've gotten our secrets made, and our changes to the PAM modules done, it's
 Run oathtool like this so you can see if your token generates properly.
 
 ```
-# oathtool -d6 -v \`cat usersecret\`
-# oathtool -d6 -v \`cat rootsecret\`
+# oathtool -d6 -v `cat usersecret`
+# oathtool -d6 -v `cat rootsecret`
 ```
 ![Our example tokens have generated correctly!](https://natethesage.github.io/img/posts/otp_8.png)
 
