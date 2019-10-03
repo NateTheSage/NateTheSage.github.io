@@ -95,11 +95,12 @@ Once you've created it, we'll be copying things in like so. Having done my resea
 # This is the users file for Oath. All entries must be structured like the following:
 # <token type>  <username>  <PIN>  <token key>  <counter> <failcounter> <last OTP used successfully>  <time of last OTP in localtime> <last IP used>
 ```
-####### What are all these fields?
+###### What are all these fields?
 
 * *Token Type* ~ This is the kind of token we'll be using. The field is formatted to expect `ALGORITHM[/COUNTERINFO[/DIGITS]]`, with everything in brackets optional. Two types are supported.
 
 > HOTP (What we're using, RFC 4226 compliant tokens.)
+
 > MOTP (Mobile-OTP. I've not tried to use this, but I believe it's for older phones. You can find it [here](http://motp.sourceforge.net/).)
 
 We'll use HOTP. The default for HOTP is assumed to be 'HOTP/E', which we don't want. This is an event-driven token, we want a time-based token in order to have a more secure token. Our token will be 'HOTP/TNN', where NN is the number of seconds in one time interval. I highly recommend 30 in order to have sufficient digit changes and to make it harder for someone to use your token who shouldn't be using it.
@@ -113,8 +114,10 @@ Finally, for digits, we'll want to use 6 digits since 6 is a pretty standard tok
 * *PIN* ~ This is totally optional, and allows you to require a PIN be entered *before* the token is input. For example, if you set a pin of '0123' and the token rolled happens to be '456789', you would enter '0123456789'.  This is not recommended generally because this is a static PIN. If you wanted a dynamic PIN, you'd have to have it verified via a `OTPAuthPINAuthProvider`. This is out of scope for this tutorial because it appears to involve systems like LDAP or AD, however, if you absolutely want to have one, the values available are the following.
 
 > - (No PIN.)
+
 > + (PIN is set by a PIN provider.)
-> <value> (Where <value> is a four digit number you enter.)
+
+> -value- (Where <value> is a four digit number you enter.)
 
 * *Token Key* ~ This is where our key for our tokens will reside.
 
@@ -240,8 +243,10 @@ Where <user> is your username, <hostname> is the hostname of the \*nix host, and
 
 Now, if you're on a proper console session (I'm in a window manager so my results will look different), you can use the following to see the QR code and scan it with Aegis (or your OTP vault of choice).
 
-`fim root.png`
-`fim <user>.png`
+```
+fim root.png
+fim <user>.png
+```
 
 Scan it in, and you're done!
 
