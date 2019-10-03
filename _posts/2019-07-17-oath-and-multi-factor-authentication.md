@@ -96,7 +96,9 @@ Once you've created it, we'll be copying things in like so. Having done my resea
 # This is the users file for Oath. All entries must be structured like the following:
 # <token type>  <username>  <PIN>  <token key>  <counter> <failcounter> <last OTP used successfully>  <time of last OTP in localtime> <last IP used>
 ```
+
 ###### What are all these fields?
+
 
 * *Token Type* ~ This is the kind of token we'll be using. The field is formatted to expect `ALGORITHM[/COUNTERINFO[/DIGITS]]`, with everything in brackets optional. Two types are supported.
 
