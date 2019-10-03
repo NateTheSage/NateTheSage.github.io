@@ -269,7 +269,7 @@ So, for Windows, the procedure gets a little (read: markedly) more difficult. Mo
 
 Enter [Rohos Logon Key](https://www.rohos.com/products/rohos-logon-key/). Some things I'd like to note are the paid-for version allows you to use OTP keys, whereas the free version allows you to use only a USB stick.
 
-If you do spring for the paid-for version, and happen to have an SSH server on your host already supporting OTP, say (Bitvise)[https://www.bitvise.com/ssh-server] ...You can generate the token from Bitvise's admin interface, scan (or copy) it into the "Enter Secret Key" selected field in Rohos's setup, you can use the same token for SSH login for console login. Do note though, like most OTP tokens, Rohos only supports SHA1 hashed tokens, which is perfectly okay and normal. (I learned this the hard way.)
+If you do spring for the paid-for version, and happen to have an SSH server on your host already supporting OTP, say [Bitvise](https://www.bitvise.com/ssh-server) ...You can generate the token from Bitvise's admin interface, scan (or copy) it into the "Enter Secret Key" selected field in Rohos's setup, you can use the same token for SSH login for console login. Do note though, like most OTP tokens, Rohos only supports SHA1 hashed tokens, which is perfectly okay and normal. (I learned this the hard way.)
 
 However, for the caveat. It installs some DLLs that presumably have to interact with login (it allows you to capture your login screen and require an OTP code) into the SysWOW64 directory if you're on a 64-bit install. Take that how you will.
 
