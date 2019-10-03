@@ -114,11 +114,11 @@ Finally, for digits, we'll want to use 6 digits since 6 is a pretty standard tok
 
 * *PIN* ~ This is totally optional, and allows you to require a PIN be entered *before* the token is input. For example, if you set a pin of '0123' and the token rolled happens to be '456789', you would enter '0123456789'.  This is not recommended generally because this is a static PIN. If you wanted a dynamic PIN, you'd have to have it verified via a `OTPAuthPINAuthProvider`. This is out of scope for this tutorial because it appears to involve systems like LDAP or AD, however, if you absolutely want to have one, the values available are the following.
 
-> - (No PIN.)
+> \- (No PIN.)
 
-> + (PIN is set by a PIN provider.)
+> \+ (PIN is set by a PIN provider.)
 
-> -value- (Where <value> is a four digit number you enter.)
+> \<value\> (Where \<value\> is a four digit number you enter.)
 
 * *Token Key* ~ This is where our key for our tokens will reside.
 
