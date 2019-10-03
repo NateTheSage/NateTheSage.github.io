@@ -16,6 +16,7 @@ until I started to run my own email service. I got into the (somewhat useful) id
 Fortunately, many of the services support multi-factor authentication. In today's world of breaches and exposures, having something keeping an actor from being able to walk willy-nilly into your account.
 
 ![Modern hacker breaking into an account without MFA, 2019, colorized.](https://natethesage.github.io/img/posts/walkrightin.jpg)
+
 *Modern hacker breaking into an account without MFA, 2019, colorized.*
 
 Like a hangover recovery, the only thing preventing a hacker from obtaining your password from the latest database dump of hash is time. The time it takes to break the hash and get your password (or in some notable exceptions, ahem, Facebook) you use on n+1 other accounts will become your only saving grace.
